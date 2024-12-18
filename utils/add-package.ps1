@@ -9,7 +9,7 @@ $package_description = Read-Host "Enter the description of the package"
 
 # Determine the target namespace and folder based on the package type
 $target_namespace = "LinkSoft.Abp.$package_name"
-$target_folder = "../src/Abp/$target_namespace"
+$target_folder = "../src/$target_namespace"
 
 # Copy all files from the templates folder to the target folder
 New-Item -ItemType Directory -Force -Path $target_folder
@@ -25,6 +25,6 @@ Rename-Item -Path "$target_folder/template.csproj" -NewName "$target_namespace.c
 (Get-Content "$target_folder/$target_namespace.csproj") -replace '{Description}', $package_description | Set-Content "$target_folder/$target_namespace.csproj"
 
 # Create the folder structure in the same folder as the .csproj
-New-Item -ItemType Directory -Force -Path "$target_folder/LinkSoft/$package_name"
+New-Item -ItemType Directory -Force -Path "$target_folder/LinkSoft/Abp/$package_name"
 
 Write-Host "Package setup completed successfully."

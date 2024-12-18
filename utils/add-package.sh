@@ -12,7 +12,7 @@ read package_description
 
 # Determine the target namespace and folder based on the package type
 target_namespace="LinkSoft.Abp.$package_name"
-target_folder="../src/Abp/$target_namespace"
+target_folder="../src/$target_namespace"
 
 # Copy all files from the templates folder to the target folder
 mkdir -p "$target_folder"
@@ -29,6 +29,6 @@ sed -i "s/{Description}/$package_description/g" "$target_folder/$target_namespac
 
 # Create the folder structure in the same folder as the .csproj
 
-mkdir -p "$target_folder/LinkSoft/$package_name"
+mkdir -p "$target_folder/LinkSoft/Abp/$package_name"
 
 echo "Package setup completed successfully."
