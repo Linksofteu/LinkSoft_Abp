@@ -18,11 +18,11 @@ LinkSoft is an [open source](https://github.com/Linksofteu) project developed un
 
 > If you want to ask a question, we assume that you have read the available [Documentation]().
 
-Before you ask a question, it is best to search for existing [Issues](https://github.com/Linksofteu/LinkSoft/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
+Before you ask a question, it is best to search for existing [Issues](https://github.com/Linksofteu/LinkSoft_Abp/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
 
 If you then still feel the need to ask a question and need clarification, we recommend the following:
 
-- Open an [Issue](https://github.com/Linksofteu/LinkSoft/issues/new).
+- Open an [Issue](https://github.com/Linksofteu/LinkSoft_Abp/issues/new).
 - Provide as much context as you can about what you're running into.
 - Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
 
@@ -32,7 +32,7 @@ If you then still feel the need to ask a question and need clarification, we rec
 > ### Legal Notice
 > When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project licence.
 
-Do not create pull requests (either Bug Fixes or Enhancements) to the github repository without discussing the proposed changes with the repository owner beforehand via the [issues page](https://github.com/Linksofteu/LinkSoft/issues). After agreeing on the scope and nature of the proposed changes, follow the contribution guide:
+Do not create pull requests (either Bug Fixes or Enhancements) to the github repository without discussing the proposed changes with the repository owner beforehand via the [issues page](https://github.com/Linksofteu/LinkSoft_Abp/issues). After agreeing on the scope and nature of the proposed changes, follow the contribution guide:
 
 - [Fork](https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo) the [LinkSoft repository](https://github.com/Linksofteu/LinkSoft) from GitHub.
 - Build the repository using the `/build/build-all.sh` or `/build/build-all.ps1` for one time.
@@ -43,13 +43,13 @@ Do not create pull requests (either Bug Fixes or Enhancements) to the github rep
 
 ### Submitting a Bug Report
 
-Bug reports may be submitted on the project's [issues page](https://github.com/Linksofteu/LinkSoft/issues).
+Bug reports may be submitted on the project's [issues page](https://github.com/Linksofteu/LinkSoft_Abp/issues).
 
 A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
 
 - Make sure that you are using the latest version.
 - Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation](). If you are looking for support, you might want to check [this section](#i-have-a-question)).
-- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/Linksofteu/LinkSoft/issues?q=label%3Abug).
+- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/Linksofteu/LinkSoft_Abp/issues?q=label%3Abug).
 - Collect information about the bug:
   - Stack trace (Traceback)
   - OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
@@ -65,7 +65,7 @@ A good bug report shouldn't leave others needing to chase you up for more inform
 
 We use GitHub issues to track bugs and errors. If you run into an issue with the project:
 
-- Open an [Issue](https://github.com/Linksofteu/LinkSoft/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
+- Open an [Issue](https://github.com/Linksofteu/LinkSoft_Abp/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
 - Explain the behavior you would expect and the actual behavior.
 - Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
 - Provide the information you collected in the previous section.
@@ -85,13 +85,13 @@ This section guides you through submitting an enhancement suggestion for LinkSof
 
 - Make sure that you are using the latest version.
 - Read the [documentation]() carefully and find out if the functionality is already covered, maybe by an individual configuration.
-- Perform a [search](https://github.com/Linksofteu/LinkSoft/issues) to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
+- Perform a [search](https://github.com/Linksofteu/LinkSoft_Abp/issues) to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 - Find out whether your idea fits with the scope and aims of the project. It's up to you to make a strong case to convince the project's developers of the merits of this feature. Keep in mind that we want features that will be useful to the majority of our users and fit the goal of the project.
 
 <!-- omit in toc -->
 #### How Do I Submit a Good Enhancement Suggestion?
 
-Enhancement suggestions are tracked as [GitHub issues](https://github.com/Linksofteu/LinkSoft/issues).
+Enhancement suggestions are tracked as [GitHub issues](https://github.com/Linksofteu/LinkSoft_Abp/issues).
 
 - Use a **clear and descriptive title** for the issue to identify the suggestion.
 - Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
