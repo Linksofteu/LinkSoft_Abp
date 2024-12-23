@@ -9,14 +9,11 @@ namespace LinkSoft.Abp.AzureMailing;
 
 [ExposeServices(typeof(AbpAzureEmailSenderConfiguration))]
 public class AbpAzureEmailSenderConfiguration(
-    IOptions<MailingOptions> _options,
-    ILogger<AbpAzureEmailSenderConfiguration> _logger) : IEmailSenderConfiguration, ITransientDependency
+    IOptions<MailingOptions> _options) : IEmailSenderConfiguration, ITransientDependency
 {
     public Task<string> GetDefaultFromAddressAsync()
     {
-        _logger.LogDebug("Getting default from address");
         var fromAddress = _options.Value.DefaultFromAddress ?? throw new FromNotNullException();
-        _logger.LogDebug("Default from address: {FromAddress}", fromAddress);
 
         return Task.FromResult(fromAddress);
     }

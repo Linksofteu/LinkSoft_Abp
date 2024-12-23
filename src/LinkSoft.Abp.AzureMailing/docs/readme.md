@@ -1,19 +1,19 @@
 This package wraps the shared Azure mailing implementation into an Abp.io framework module.
 
-Add a connection string to your application.json:
-```json
-...
-"ConnectionStrings": {
-  "Mailing": "<your-connection-string>"
-}
-...
-```
-
 Usage:
 ```csharp
 [DependsOn(typeof(AzureMailingModule))]
-public class YourAbpModule()
+public class AmendmentSheetsMailingModule : AbpModule
 {
+    public override void ConfigureServices(ServiceConfigurationContext context)
+    {
+        Configure<MailingOptions>(options =>
+        {
+            options.DefaultFromAddress = "noreply@domain.com";
+            options.AzureEmailSenderConnectionString = "AzureCommunicationServicesConnectionString";
+        });
+    }
+}
 ...
 ```
 

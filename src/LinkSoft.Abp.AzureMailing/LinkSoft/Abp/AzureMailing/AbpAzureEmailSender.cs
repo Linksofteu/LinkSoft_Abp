@@ -6,7 +6,6 @@ using Azure.Communication.Email;
 using Microsoft.Extensions.Logging;
 using LinkSoft.Abp.AzureMailing.Abstractions;
 using LinkSoft.AzureMailing;
-using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace LinkSoft.Abp.AzureMailing;
@@ -17,14 +16,12 @@ public class AbpAzureEmailSender(
         AbpAzureEmailSenderConfiguration _senderConfiguration,
         IBackgroundJobManager _backgroundJobManager,
         ILogger<AbpAzureEmailSender> _logger,
-        IAzureEmailSender _emailSender,
-        IOptions<MailingOptions> _options) 
+        IAzureEmailSender _emailSender) 
         : EmailSenderBase(new NullTenant(), _senderConfiguration, _backgroundJobManager), ITransientDependency
 {
     protected EmailMessage ConvertMailMessage(MailMessage mail)
     {
         var from = mail.From?.Address;
-        _logger.LogDebug("From address: {From}, Connection string: {ConnectionString}", from, _options.Value.AzureEmailSenderConnectionString);
 
         var recipientAddress = new List<EmailAddress>();
         foreach (var recipient in mail.To) recipientAddress.Add(new EmailAddress(recipient.Address));
@@ -44,7 +41,6 @@ public class AbpAzureEmailSender(
 
     protected async override Task SendEmailAsync(MailMessage mail)
     {
-        _logger.LogDebug("Converting MailMessage to EmailMessage");
         var message = ConvertMailMessage(mail);
 
         _logger.LogDebug("Sending email to {MailTo} using Azure Email Sender", mail.To);
