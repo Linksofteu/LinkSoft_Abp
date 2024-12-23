@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DF222933-AEF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkSoft.Abp.AzureMailing", "src\LinkSoft.Abp.AzureMailing\LinkSoft.Abp.AzureMailing.csproj", "{47B97B85-A398-4CB7-94F0-3559B09A3A90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkSoft.Abp.AzureMailing.Abstractions", "src\LinkSoft.Abp.AzureMailing.Abstractions\LinkSoft.Abp.AzureMailing.Abstractions.csproj", "{A05C8D50-AE21-465A-9567-E4DFA9C01E07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{47B97B85-A398-4CB7-94F0-3559B09A3A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B97B85-A398-4CB7-94F0-3559B09A3A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47B97B85-A398-4CB7-94F0-3559B09A3A90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05C8D50-AE21-465A-9567-E4DFA9C01E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05C8D50-AE21-465A-9567-E4DFA9C01E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05C8D50-AE21-465A-9567-E4DFA9C01E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05C8D50-AE21-465A-9567-E4DFA9C01E07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{47B97B85-A398-4CB7-94F0-3559B09A3A90} = {DF222933-AEFE-4F7A-A5E0-6AE5626319BF}
+		{A05C8D50-AE21-465A-9567-E4DFA9C01E07} = {DF222933-AEFE-4F7A-A5E0-6AE5626319BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7FA6D81-D56A-40E5-930C-18AED77963BA}

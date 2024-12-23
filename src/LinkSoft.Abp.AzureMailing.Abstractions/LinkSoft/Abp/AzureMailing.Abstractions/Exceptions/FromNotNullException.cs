@@ -1,6 +1,6 @@
 using Volo.Abp;
 
-namespace LinkSoft.Abp.AzureMailing.Exceptions;
+namespace LinkSoft.Abp.AzureMailing.Abstractions;
 
 public class FromNotNullException : UserFriendlyException
 {

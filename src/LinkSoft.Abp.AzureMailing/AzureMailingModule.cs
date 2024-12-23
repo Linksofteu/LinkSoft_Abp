@@ -10,19 +10,21 @@ namespace LinkSoft.Abp.AzureMailing;
 [DependsOn(typeof(AbpEmailingModule))]
 public class AzureMailingModule : AbpModule
 {
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        base.PreConfigureServices(context);
+        context.Services.AddSingleton<IAzureEmailSenderConfiguration, LinkSoft.Abp.AzureMailing.AzureEmailSenderConfiguration>();
+        context.Services.AddSingleton<IAzureEmailSender, AzureEmailSender>();
+    }
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var configuration = context.Services.GetConfiguration();
-        var mailingConnectionString = configuration["ConnectionStrings:Mailing"];
-
-        context.Services.AddTransient<IAzureEmailSenderConfiguration, AzureEmailSenderConfiguration>();
-        context.Services.AddTransient<IAzureEmailSender, AzureEmailSender>();
+        var mailingConnectionString = configuration["ConnectionStrings:Mailing"];   
 
         if (!string.IsNullOrEmpty(mailingConnectionString)) {
-            Console.WriteLine("Using AzureEmailSender");
             context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, AbpAzureEmailSender>());
         } else {
-            Console.WriteLine("Using NullEmailSender");
             context.Services.Replace(ServiceDescriptor.Singleton<IEmailSender, NullEmailSender>());
         }
     }

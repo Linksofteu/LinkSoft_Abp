@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>LinkSoft.Abp.AzureMailing</PackageId>
+    <PackageId>LinkSoft.Abp.AzureMailing.Abstractions</PackageId>
     <Authors>Linksoft Technologies a.s.</Authors>
     <Copyright>Copyright © 2024 Linksoft Technologies a.s.</Copyright>
     <RepositoryUrl>https://github.com/Linksofteu/LinkSoft</RepositoryUrl>
@@ -18,18 +18,18 @@
     Initial release
     </PackageReleaseNotes>
     <Description>
-    Package which implements AbpMailing shared package as an Abp module
+    This is the abstractions module for LinkSoft.Abp.AzureMailing module
     </Description>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="images/logo-linksoft.png" Pack="true" PackagePath="\" />
-    <None Include="docs/readme.md" Pack="true" PackagePath="\" />
+    <None Include="images/logo-linksoft.png" Pack="true" PackagePath="\"/>
+    <None Include="docs/readme.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LinkSoft.AzureMailing" Version="0.3.0" />
-    <PackageReference Include="LinkSoft.Abp.AzureMailing.Abstractions" Version="8.3.1" />
-    <PackageReference Include="Volo.Abp.Emailing" Version="8.3.1" />
+    <PackageReference Include="Volo.Abp.Core" Version="8.3.1" />
+    <PackageReference Include="Volo.Abp.MultiTenancy.Abstractions" Version="8.3.1" />
   </ItemGroup>
 </Project>
