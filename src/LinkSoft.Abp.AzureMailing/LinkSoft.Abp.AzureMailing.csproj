@@ -13,7 +13,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="LinkSoft.Abp.AzureMailing.Abstractions" Version="8.3.12" />
     <PackageReference Include="Volo.Abp.Emailing" Version="8.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../LinkSoft.Abp.AzureMailing.Abstractions/LinkSoft.Abp.AzureMailing.Abstractions.csproj" />
   </ItemGroup>
 </Project>
