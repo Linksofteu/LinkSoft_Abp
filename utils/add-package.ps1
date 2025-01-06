@@ -29,4 +29,7 @@ Rename-Item -Path "$target_folder/templateModule.cs" -NewName "${package_name}Mo
 # Create the folder structure in the same folder as the .csproj
 New-Item -ItemType Directory -Force -Path "$target_folder/LinkSoft/Abp/$package_name"
 
+# Add the newly created .csproj file to the solution file
+& dotnet sln ../LinkSoft_Abp.sln add "$target_folder/$target_namespace.csproj"
+
 Write-Host "Package setup completed successfully."
