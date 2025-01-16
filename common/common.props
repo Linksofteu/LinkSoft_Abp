@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <Authors>Linksoft Technologies a.s.</Authors>
     <Copyright>Copyright © 2024 Linksoft Technologies a.s.</Copyright>
-    <RepositoryUrl>https://github.com/Linksofteu/LinkSoft</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Linksofteu/LinkSoft_Abp</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIcon>logo-linksoft.png</PackageIcon>
@@ -14,6 +14,20 @@
     <RepositoryBranch>main</RepositoryBranch>
     <Version>8.3.12</Version>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EnableSourceLink>true</EnableSourceLink>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" Condition="'$(Configuration)' == 'Release'" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="../../common/logo-linksoft.png" Pack="true" PackagePath="\"/>
