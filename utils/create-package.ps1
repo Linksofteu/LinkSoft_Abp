@@ -14,13 +14,13 @@ if ([string]::IsNullOrWhiteSpace($create_abstractions)) {
 }
 
 # Create the main package
-./add-package.ps1 -PackageName $package_name -PackageDescription $package_description -SkipModule $false
+./add-package.ps1 -PackageName $package_name -PackageDescription $package_description -SkipModule "false"
 
 # Create the abstractions package if requested
 if ($create_abstractions.ToUpper() -eq "Y") {
     $abstractions_name = "$package_name.Abstractions" 
     $abstractions_description = "Abstractions package for the package LinkSoft.Abp.$package_name"
-    ./add-package.ps1 -PackageName $abstractions_name -PackageDescription $abstractions_description -SkipModule $true
+    ./add-package.ps1 -PackageName $abstractions_name -PackageDescription $abstractions_description -SkipModule "true"
 }
 
 Write-Host "All packages created successfully." 

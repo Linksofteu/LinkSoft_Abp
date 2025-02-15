@@ -9,7 +9,7 @@ param(
     [string]$PackageDescription,
     
     [Parameter(Mandatory=$false)]
-    [bool]$SkipModule = $false
+    [string]$SkipModule = "false"
 )
 
 # If parameters not provided through command line, ask for them
@@ -21,6 +21,9 @@ if ([string]::IsNullOrEmpty($PackageDescription)) {
     $PackageDescription = Read-Host "Enter the description of the package"
 }
 
+# Convert string to boolean
+$skipModuleBool = $SkipModule.ToLower() -eq "true"
+
 # Determine the target namespace and folder based on the package type
 $target_namespace = "LinkSoft.Abp.$PackageName"
 $target_folder = "../src/$target_namespace"
@@ -30,7 +33,7 @@ New-Item -ItemType Directory -Force -Path $target_folder
 Copy-Item -Recurse -Path "../templates/*" -Destination $target_folder
 
 # If skip_module is set, remove the module file, otherwise rename and update it
-if ($SkipModule) {
+if ($skipModuleBool) {
     Remove-Item "$target_folder/templateModule.cs"
 } else {
     Rename-Item -Path "$target_folder/templateModule.cs" -NewName "${PackageName}Module.cs"
