@@ -1,6 +1,3 @@
-# Set the working directory to the location of the script's file
-Set-Location -Path (Split-Path -Parent $MyInvocation.MyCommand.Definition)
-
 param(
     [Parameter(Mandatory=$true)]
     [string]$PackageName,
@@ -11,6 +8,9 @@ param(
     [Parameter(Mandatory=$false)]
     [string]$SkipModule = "false"
 )
+
+# Set the working directory to the location of the script's file
+Set-Location -Path (Split-Path -Parent $MyInvocation.MyCommand.Definition)
 
 # If parameters not provided through command line, ask for them
 if ([string]::IsNullOrEmpty($PackageName)) {
