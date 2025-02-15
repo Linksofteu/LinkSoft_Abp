@@ -2,13 +2,16 @@
 # Set the working directory to the location of the script's file
 cd "$(dirname "$0")"
 
-# Ask the user to enter the name of the package
-echo "Enter the name of the package:"
-read package_name
+# Get parameters from command line arguments
+package_name="$1"
+package_description="$2"
+skip_module="$3"
 
-# Ask the user to enter the description of the package
-echo "Enter the description of the package:"
-read package_description
+# Validate required parameters
+if [ -z "$package_name" ] || [ -z "$package_description" ]; then
+    echo "Usage: $0 <package_name> <package_description> [skip_module]"
+    exit 1
+fi
 
 # Determine the target namespace and folder based on the package type
 target_namespace="LinkSoft.Abp.$package_name"
@@ -18,14 +21,20 @@ target_folder="../src/$target_namespace"
 mkdir -p "$target_folder"
 cp -r ../templates/* "$target_folder"
 
-# Rename relevant files
+# If skip_module is set, remove the module file
+if [ "$skip_module" = "true" ]; then
+    rm "$target_folder/templateModule.cs"
+else
+    # Rename module file only if we're not skipping it
+    mv "$target_folder/templateModule.cs" "$target_folder/${package_name}Module.cs"
+    sed -i "s/{PackageName}/$package_name/g" "$target_folder/${package_name}Module.cs"
+    sed -i "s/{FullName}/$target_namespace/g" "$target_folder/${package_name}Module.cs"
+fi
+
+# Rename and update .csproj file
 mv "$target_folder/template.csproj" "$target_folder/$target_namespace.csproj"
-mv "$target_folder/templateModule.cs" "$target_folder/${package_name}Module.cs"
-
-# Replace {FullName} with {target_namespace} in the copied .csproj and Module files
-sed -i "s/{FullName}/$target_namespace/g" "$target_folder/$target_namespace.csproj" "$target_folder/${package_name}Module.cs"
-
-# Replace {Description} with the inputted description in the copied .csproj file
+sed -i "s/{FullName}/$target_namespace/g" "$target_folder/$target_namespace.csproj"
+sed -i "s/{PackageName}/$package_name/g" "$target_folder/$target_namespace.csproj"
 sed -i "s/{Description}/$package_description/g" "$target_folder/$target_namespace.csproj"
 
 # Create the folder structure in the same folder as the .csproj
