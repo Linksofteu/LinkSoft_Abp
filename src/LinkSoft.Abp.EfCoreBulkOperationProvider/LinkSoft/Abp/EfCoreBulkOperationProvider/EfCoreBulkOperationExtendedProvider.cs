@@ -2,10 +2,11 @@ using EFCore.BulkExtensions;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
+using LinkSoft.Abp.EfCoreBulkOperationProvider.Abstractions;
 
-namespace CAS.Combime.Framework.EntityFrameworkCore.Providers;
+namespace LinkSoft.Abp.EfCoreBulkOperationProvider;
 
-public class EfCoreBulkOperationExtendedProvider : EfCoreBulkOperationProvider, IEfCoreBulkOperationExtendedProvider
+public class EfCoreBulkOperationExtendedProvider : IEfCoreBulkOperationExtendedProvider
 {
     public async Task InsertOrUpdateManyAsync<TDbContext, TEntity>(IEfCoreRepository<TEntity> repository,
         IEnumerable<TEntity> entities, bool autoSave,

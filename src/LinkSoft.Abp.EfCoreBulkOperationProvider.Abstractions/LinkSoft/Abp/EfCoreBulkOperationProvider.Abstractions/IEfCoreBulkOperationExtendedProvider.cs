@@ -2,7 +2,7 @@ using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 
-namespace CAS.Combime.Framework.EntityFrameworkCore.Providers;
+namespace LinkSoft.Abp.EfCoreBulkOperationProvider.Abstractions;
 
 public interface IEfCoreBulkOperationExtendedProvider
 {
