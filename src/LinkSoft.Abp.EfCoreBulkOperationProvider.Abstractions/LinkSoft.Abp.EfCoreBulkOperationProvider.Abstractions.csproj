@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="../../common/common.props" />
+
+  <PropertyGroup>
+    <PackageId>LinkSoft.Abp.EfCoreBulkOperationProvider.Abstractions</PackageId>
+    <Description>Abstractions package for the package LinkSoft.Abp.EfCoreBulkOperationProvider</Description>
+    <PackageReleaseNotes>Init</PackageReleaseNotes>
+  </PropertyGroup>
+</Project>
