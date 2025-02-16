@@ -7,4 +7,8 @@
     <Description>Abstractions package for the package LinkSoft.Abp.EfCoreBulkOperationProvider</Description>
     <PackageReleaseNotes>Init</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="9.0.3" />
+  </ItemGroup>
 </Project>
