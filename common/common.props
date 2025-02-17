@@ -12,7 +12,7 @@
     <PackageReadmeFile>readme.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryBranch>main</RepositoryBranch>
-    <Version>9.0.3</Version>
+    <Version>9.0.32</Version>
     <!-- Enable NuGet package auditing -->
     <NuGetAudit>true</NuGetAudit>
     <!-- Audit direct and transitive packages -->
