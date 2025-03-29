@@ -2,7 +2,7 @@ name: Build & Test
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches: [ 'main' ]
 
 # Adding permissions with read-only access as this is a build/test workflow
 permissions:
