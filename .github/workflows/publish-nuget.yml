@@ -5,6 +5,12 @@ on:
     tags:
       - 'v*.*.*'
 
+# Adding permissions for publishing packages and creating PRs
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+
 env:
   DOTNET_VERSION: '9.0'
 

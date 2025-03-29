@@ -4,6 +4,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+# Adding permissions with read-only access as this is a build/test workflow
+permissions:
+  contents: read
+  checks: write
+
 env:
   DOTNET_VERSION: '9.0'
 
